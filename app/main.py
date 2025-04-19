@@ -13,8 +13,9 @@ app = FastAPI(title="LangChain API Demo")
 
 # OllamaのLLMを初期化（Docker環境ではollama:11434、ローカルではlocalhost:11434）
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "localhost")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")  # 環境変数からモデル名を取得
 llm = Ollama(
-    model="llama3",
+    model=OLLAMA_MODEL,
     base_url=f"http://{OLLAMA_HOST}:11434",
     temperature=0.1,  # より決定論的な応答に
     num_ctx=512,  # コンテキストウィンドウを小さくする

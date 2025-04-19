@@ -108,3 +108,9 @@ poetry run python notebooks/basic_langchain.py
 - `docker-compose.yml`: マルチコンテナ設定（アプリ、Ollama、ChromaDB）
 - `docs/`: セットアップ関連のドキュメント
 - `notebooks/`: LangChainのサンプルコード
+
+
+## モデルのダウンロード
+```bash
+docker exec -it langchain-practice-ollama-1 ollama pull llama2
+```
